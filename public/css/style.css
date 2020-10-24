@@ -19,7 +19,7 @@ h1{
     font-family: 'Sansita Swashed', cursive;
 } 
 
-#search {
+#Search {
     cursor: pointer;
     font-size: 15px;
     border-radius: 4px;
@@ -30,3 +30,6 @@ h1{
 #search:focus {
     outline: 1;
 } 
+.care {
+    color: chartreuse;
+}

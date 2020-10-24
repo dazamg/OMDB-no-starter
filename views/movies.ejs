@@ -1,0 +1,9 @@
+<h1>Movie results</h1>
+
+<ul>
+    <% result.forEach(result=>{%>
+        
+        <li class="care"><%= result.Title %><a href='/movies/<%= result.imdbID %>'>Read More</a>
+        </li>
+    <% }) %>
+</ul>

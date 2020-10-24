@@ -10,16 +10,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 app.use(ejsLayouts);
+
+//HOME ROUTE
 app.get('/', (req, res) =>{
     res.render('index')
 })
+
+// RESULT ROUTE
 app.get('/movies', (req, res)=> {
     let seachTerm = req.query.q
     console.log(req.query)
-    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.API_KEY}&s=${seachTerm}`)
+    axios.get(`http://www.omdbapi.com/?apikey=${process.env.API_KEY}&s=${seachTerm}`)
     .then(response=>{
     let results = response.data.Search
-        res.render('show', {result: results})
+        res.render('movies', {result: results})
         // res.send(results)
     })
     .catch(err=>{
@@ -29,10 +33,10 @@ app.get('/movies', (req, res)=> {
 
 app.get('/movies/:idx', (req, res) => {
     let movieLinks = req.params.idx
-    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.API_KEY}&s=${movieLinks}`)
+    axios.get(`http://www.omdbapi.com/?apikey=${process.env.API_KEY}&i=${movieLinks}`)
     .then(response=>{
     
-        res.send('show', response.data)
+        res.render('show', {result: response.data})
     })
 })
 
