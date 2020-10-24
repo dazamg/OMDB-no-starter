@@ -7,6 +7,7 @@ const fs=require('fs')
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 app.use(ejsLayouts);
 app.get('/', (req, res) =>{

@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://i.imgur.com/7ZlltFn.jpeg") no-repeat; 
+    background-size: 100%;
+    /* background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #687ee0 100%) no-repeat; */
+
+ 
+    background-size: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+h1{
+    color: rgb(50, 185, 23);
+    font-family: 'Sansita Swashed', cursive;
+} 
+
+#search {
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 3px 12px;
+    color: #ff0000
+} */ 
+
+#search:focus {
+    outline: 1;
+} 
