@@ -1,0 +1,18 @@
+
+    <!-- <h1>Info about <%= result[1].Title %> </h1> -->
+<!-- <ul>
+    <% for (key in result){ %> 
+        <li>
+          <%= result[key] %>
+        </li>
+    <%} %>
+</ul> -->
+
+<ul>
+    <% result.forEach(result=>{%>
+        <img src="<%=result.Poster%>"/>
+        <li><a href='<%= result.imdbID %>'><%= result.Title %></a>
+        </li>
+    <% }) %>
+</ul>
+
